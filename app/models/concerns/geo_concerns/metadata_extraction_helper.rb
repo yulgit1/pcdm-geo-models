@@ -29,7 +29,7 @@ module GeoConcerns
     def should_populate_from_oid=(args)
       @should_populate_from_oid = args.present? && args != ''
       return unless should_populate_from_oid
-      Rails.logger.info "TEST:#{args.inspect}"
+      #TODO hook in here
     end
 end
 
