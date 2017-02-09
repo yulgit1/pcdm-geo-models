@@ -23,5 +23,14 @@ module GeoConcerns
       populate_metadata(args)
       save
     end
-  end
+
+    attr_accessor :should_populate_from_oid
+
+    def should_populate_from_oid=(args)
+      @should_populate_from_oid = args.present? && args != ''
+      return unless should_populate_from_oid
+      Rails.logger.info "TEST:#{args.inspect}"
+    end
+end
+
 end

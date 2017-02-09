@@ -11,3 +11,6 @@ test/dummy/.sass-cache
 fcrepo4*-data
 Gemfile.lock
 coverage
+
+.idea/
+.vagrant/
