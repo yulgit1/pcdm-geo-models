@@ -2,7 +2,7 @@ module GeoConcerns
   class GeoConcernsShowPresenter < CurationConcerns::WorkShowPresenter
     delegate :spatial, :temporal, :issued, :coverage, :provenance, :layer_modified,
              :identifier, to: :solr_document
-    class_attribute :file_format_service
+    class_attribute :file_format_service, :work_presenter_class
 
     def geo_file_set_presenters
       # filter for geo file sets

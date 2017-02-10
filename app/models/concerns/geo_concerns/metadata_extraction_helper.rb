@@ -30,6 +30,9 @@ module GeoConcerns
       @should_populate_from_oid = args.present? && args != ''
       return unless should_populate_from_oid
       #TODO hook in here
+      GeoConcerns::Extractors::OidMetadataExtractor.new(args).to_hash.each do |k,v|
+        send("#{k}=".to_sym, v)
+      end
     end
 end
 
