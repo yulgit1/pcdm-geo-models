@@ -90,6 +90,11 @@ module GeoConcerns
             'Public'
           when Hydra::AccessControls::AccessRight::VISIBILITY_TEXT_VALUE_AUTHENTICATED
             'Restricted'
+          #Yale logic below. TODO use rights as extracted from fdid 180
+          when 'restricted'
+            'Restricted'
+          else
+            'Public'
           end
         end
 

@@ -105,12 +105,22 @@ module GeoConcerns
         metadata_required.merge(metadata_optional)
       end
 
+      def rights
+        if fdid_value(180) == "Open Access"
+          return ["Public"]
+        else
+          return ["Restricted"]
+        end
+      end
+
       def metadata_required
         {
             coverage: coverage,
             creator: creators,
             description: description,
-            title: title
+            title: title,
+            rights: rights,
+            provenance: 'Yale' #TODO still says "Your Insitition"
         }.compact
       end
 
